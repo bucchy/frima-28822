@@ -55,7 +55,7 @@ Things you may want to cover:
 | price         | integer  | null: false |
 | category_id   | integer  | null: false |
 | status_id     | integer  | null: false |
-| user_id       | integer  | null: false |
+| user_id       | integer  | null: false, foreign_key: true |
 | explanation   | string   | null: false |
 
 
@@ -68,8 +68,8 @@ Things you may want to cover:
 
 | Column        | Type     | Options     |
 | ------------- | -------- | ----------- |
-| user_id       | integer  | null: false |
-| item_id       | integer  | null: false |
+| user_id       | integer  | null: false, foreign_key: true |
+| item_id       | integer  | null: false, foreign_key: true |
 
 ### Association
 
@@ -83,10 +83,12 @@ Things you may want to cover:
 | --------------- | ------- | ----------- |
 | street_address  | string  | null: false |
 | phone_number    | string  | null: false |
-| postal_code     | string  | null: false, foreign_key: true |
-| prefectures     | string  | null: false, foreign_key: true |
-| city            | string  | null: false, foreign_key: true |
-| building_name   | string  | foreign_key: true |
+| postal_code     | string  | null: false |
+| prefectures     | integer | null: false |
+| city            | string  | null: false |
+| building_name   | string  |  |
+| purchase_id     | integer | null: false, foreign_key: true |
+
 
 ### Association
 
