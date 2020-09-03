@@ -98,4 +98,4 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :products
-- belongs_to :street addresses
+- belongs_to :users
