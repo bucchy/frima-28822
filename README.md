@@ -50,13 +50,14 @@ Things you may want to cover:
 | name       | string  | null: false |
 | image      | string  | null: false |
 | price      | integer | null: false |
+| comment    | string  | null: false |
 | category   | string  | null: false |
 | status     | string  | null: false |
 
 ### Association
 
-- has_many :users_products
-- belongs  :purchases
+- has_many   :users_products
+- belongs_to :purchases
 
 
 ##  purchases テーブル
