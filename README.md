@@ -43,7 +43,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :address
+- has_many   :user
+- belongs_to :purchase
 
 
 ## item テーブル
@@ -55,12 +56,13 @@ Things you may want to cover:
 | category_id   | integer  | null: false |
 | status_id     | integer  | null: false |
 | user_id       | integer  | null: false |
+| explanation   | string   | null: false |
 
 
 ### Association
 
 - belongs_to :user
-- belongs_to :purchase
+- has_one    :purchase
 
 ##  purchases テーブル
 
@@ -72,7 +74,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :address
+- has_one    :address
 - belongs_to :item
 
 ##  addresses テーブル
@@ -81,10 +83,10 @@ Things you may want to cover:
 | --------------- | ------- | ----------- |
 | street_address  | string  | null: false |
 | phone_number    | string  | null: false |
-| postal_code     | string  | null: false |
-| prefectures     | string  | null: false |
-| city            | string  | null: false |
-| building_name   | string  | null: false |
+| postal_code     | string  | null: false, foreign_key: true |
+| prefectures     | string  | null: false, foreign_key: true |
+| city            | string  | null: false, foreign_key: true |
+| building_name   | string  | foreign_key: true |
 
 ### Association
 
