@@ -44,36 +44,36 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :addresses
+- has_many :address
 
 
 ## item テーブル
 
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-| name       | string  | null: false |
-| price      | integer | null: false |
-| category   | string  | null: false |
-| status     | string  | null: false |
+| Column        | Type     | Options     |
+| ------------- | -------- | ----------- |
+| name          | string   | null: false |
+| price         | integer  | null: false |
+| category_id   | integer  | null: false |
+| status_id     | integer  | null: false |
+| user_id       | integer  | null: false |
+
 
 ### Association
 
-- has_many   :users_products
-- belongs_to :purchases
-
-- belongs_to_active_hash :category
-- belongs_tp_active_hash :status
+- belongs_to :user
+- belongs_to :purchase
 
 ##  purchases テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| fee           | integer | null: false |
-| credit_card   | string  | null: false |
+| Column        | Type     | Options     |
+| ------------- | -------- | ----------- |
+| user_id       | integer  | null: false |
+| item_id       | integer  | null: false |
 
 ### Association
-- belongs_to :users
-- belongs_to :addresses
+
+- belongs_to :user
+- belongs_to :address
 - belongs_to :item
 
 ##  addresses テーブル
@@ -90,5 +90,5 @@ Things you may want to cover:
 ### Association
 
 
-- belongs_to :purchases
+- belongs_to :purchase
 
