@@ -58,7 +58,6 @@ Things you may want to cover:
 
 - belongs_to :users
 - has_one :purchases
-- has_many :products_street addresses
 
 
 ##  purchases テーブル
