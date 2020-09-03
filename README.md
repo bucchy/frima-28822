@@ -43,9 +43,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_many   :user
-- belongs_to :purchase
-
+- has_many :purchases
+- has_many :items
 
 ## item テーブル
 
@@ -56,7 +55,7 @@ Things you may want to cover:
 | category_id   | integer  | null: false |
 | status_id     | integer  | null: false |
 | user_id       | integer  | null: false, foreign_key: true |
-| explanation   | string   | null: false |
+| explanation   | text   | null: false |
 
 
 ### Association
