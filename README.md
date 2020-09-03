@@ -32,25 +32,26 @@ Things you may want to cover:
 | nickname         | string | null: false |
 | email            | string | null: false |
 | password         | string | null: false |
-| identification   | string | null: false |
-| History          | string | null: false |
+| family_name      | string | null: false |
+| first_name       | string | null: false |
+| family_name_kana | string | null: false |
+| first_name_kana  | string | null: false |
+| birthday         | string | null: false |
+
 
 
 
 ### Association
 
-- has_many :users_products
 - has_many :addresses
 
 
-## products テーブル
+## item テーブル
 
 | Column     | Type    | Options     |
 | ---------- | ------- | ----------- |
 | name       | string  | null: false |
-| image      | string  | null: false |
 | price      | integer | null: false |
-| comment    | string  | null: false |
 | category   | string  | null: false |
 | status     | string  | null: false |
 
@@ -59,6 +60,8 @@ Things you may want to cover:
 - has_many   :users_products
 - belongs_to :purchases
 
+- belongs_to_active_hash :category
+- belongs_tp_active_hash :status
 
 ##  purchases テーブル
 
@@ -68,34 +71,23 @@ Things you may want to cover:
 | credit_card   | string  | null: false |
 
 ### Association
-
+- belongs_to :users
 - belongs_to :addresses
-- has_many :products
+- belongs_to :item
 
 ##  addresses テーブル
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
 | street_address  | string  | null: false |
-| phone_number    | integer | null: false |
-| shipping_time   | string  | null: false |
-| map             | string  | null: false |
-
+| phone_number    | string  | null: false |
+| postal_code     | string  | null: false |
+| prefectures     | string  | null: false |
+| city            | string  | null: false |
+| building_name   | string  | null: false |
 
 ### Association
 
 - belongs_to :users
 - belongs_to :purchases
 
-##  users_products テーブル
-
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| users_ID        | string | null: false |
-| products_ID     | string | null: false |
-
-
-### Association
-
-- belongs_to :products
-- belongs_to :users
