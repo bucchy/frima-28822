@@ -65,7 +65,7 @@ Things you may want to cover:
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
 | fee           | integer | null: false |
-| credit card   | string  | null: false |
+| credit_card   | string  | null: false |
 
 ### Association
 
@@ -76,9 +76,9 @@ Things you may want to cover:
 
 | Column          | Type    | Options     |
 | --------------- | ------- | ----------- |
-| street address  | string  | null: false |
-| phone number    | integer | null: false |
-| shipping time   | string  | null: false |
+| street_address  | string  | null: false |
+| phone_number    | integer | null: false |
+| shipping_time   | string  | null: false |
 | map             | string  | null: false |
 
 
