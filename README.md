@@ -29,7 +29,6 @@ Things you may want to cover:
 
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
-| name             | string | null: false |
 | nickname         | string | null: false |
 | email            | string | null: false |
 | password         | string | null: false |
@@ -40,25 +39,24 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
-- has_many :street addresses
+- has_many :users_products
+- has_many :addresses
 
 
 ## products テーブル
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| name       | string | null: false |
-| image      | string | null: false |
-| price      | string | null: false |
-| category   | string | null: false |
-| status     | string | null: false |
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| name       | string  | null: false |
+| image      | text    | null: false |
+| price      | integer | null: false |
+| category   | string  | null: false |
+| status     | string  | null: false |
 
 ### Association
 
-- belongs_to :users
-- has_one :purchases
-- has_many :products_street addresses
+- belongs_to :purchases
+- has_many   :users_products
 
 
 ##  purchases テーブル
@@ -66,34 +64,34 @@ Things you may want to cover:
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
 | fee           | string | null: false |
-| credit card   | string | null: false |
+| credit_card   | string | null: false |
 
 ### Association
 
-- belongs_to :products
-- has_many :user
+- belongs_to :address
+- has_many :products
 
-##  street addresses テーブル
+##  addresses テーブル
 
 | Column          | Type   | Options     |
 | --------------- | ------ | ----------- |
-| street address  | string | null: false |
-| phone number    | string | null: false |
-| shipping time   | string | null: false |
+| address         | string | null: false |
+| phone_number    | string | null: false |
+| shipping_time   | string | null: false |
 | map             | string | null: false |
 
 
 ### Association
 
-- belongs_to :user
-- belongs_to :purchases
+- belongs_to :users
+- has_one :purchases
 
-##  products_street addresses テーブル
+##  users_products テーブル
 
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
+| users_ID           | string | null: false |
 | products_ID        | string | null: false |
-| street address_ID  | string | null: false |
 
 
 ### Association
