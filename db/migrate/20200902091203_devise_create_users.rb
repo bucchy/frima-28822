@@ -4,19 +4,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
 
       ## Database authenticatable
-<<<<<<< Updated upstream
       
       t.string :nickname,           null: false
       t.string :email,              null: false, default: ""
       t.string :password,           null: false, default: ""
-=======
-      t.string :nickname,           null: false
-      t.string :email,              null: false, default: ""
-      t.string :password,           null: false, default: ""
-      t.string :identification,     null: false
-      t.string :histroy,            null: false
->>>>>>> Stashed changes
-
       t.string :identification,     null: false
       t.string :histroy,            null: false
       add_index :users, :email,                unique: true
@@ -49,20 +40,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       
       t.timestamps null: false
     end
-<<<<<<< Updated upstream
   
     
   
     create_table :items do |t|
      
-=======
-
-  
-    
-  
-
-    create_table :items do |t|
->>>>>>> Stashed changes
       ## Database authenticatable
      
       t.string  :name,               null: false
@@ -76,10 +58,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :purchases do |t|
     
       ## Database authenticatable
-<<<<<<< Updated upstream
     
-=======
->>>>>>> Stashed changes
       t.string   :fee,                null: false
       t.string   :credit_card,        null: false
     

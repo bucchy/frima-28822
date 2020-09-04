@@ -18,7 +18,6 @@ Things you may want to cover:
 | nickname         | string | null: false |
 | email            | string | null: false |
 | password         | string | null: false |
-<<<<<<< Updated upstream
 | family_name      | string | null: false |
 | first_name       | string | null: false |
 | family_name_kana | string | null: false |
@@ -36,29 +35,6 @@ Things you may want to cover:
 | status_id     | integer  | null: false |
 | user_id       | integer  | null: false, foreign_key: true |
 | explanation   | text   | null: false |
-=======
-| identification   | string | null: false |
-| history          | string | null: false |
-
-
-
-### Association
-
-- has_many :users_products
-- has_many :addresses
-
-
-## items テーブル
-
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-| name       | string  | null: false |
-| image      | text    | null: false |
-| price      | integer | null: false |
-| category   | string  | null: false |
-| status     | string  | null: false |
-
->>>>>>> Stashed changes
 ### Association
 - belongs_to :user
 - has_one    :purchase
@@ -82,10 +58,4 @@ Things you may want to cover:
 | building_name   | string  |  |
 | purchase_id     | integer | null: false, foreign_key: true |
 ### Association
-<<<<<<< Updated upstream
 - belongs_to :purchase
-=======
-
-- belongs_to :users
-- has_one :purchases
->>>>>>> Stashed changes
