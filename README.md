@@ -26,7 +26,7 @@ Things you may want to cover:
 ### Association
 - has_many :purchases
 - has_many :items
-## item テーブル
+## items テーブル
 | Column        | Type     | Options     |
 | ------------- | -------- | ----------- |
 | name          | string   | null: false |

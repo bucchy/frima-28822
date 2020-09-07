@@ -10,9 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :password,           null: false, default: ""
       t.string :identification,     null: false
       t.string :histroy,            null: false
-      add_index :users, :email,                unique: true
-      add_index :users, :reset_password_token, unique: true
-
+      
       ## Recoverable
       
       t.string   :reset_password_token
@@ -41,39 +39,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
   
-    
-  
-    create_table :items do |t|
-     
-      ## Database authenticatable
-     
-      t.string  :name,               null: false
-      t.text    :image,              null: false
-      t.integer :price,              null: false
-      t.string  :category,           null: false
-      t.string  :status,             null: false
-    
-    end
-    
-    create_table :purchases do |t|
-    
-      ## Database authenticatable
-    
-      t.string   :fee,                null: false
-      t.string   :credit_card,        null: false
-    
-    end
-    
-    create_table :adress do |t|
-    
-      ## Database authenticatable
-    
-      t.string  :address,            null: false
-      t.integer :phone_number,       null: false
-      t.integer :shipping_time,      null: false
-      t.string  :map,                null: false
-    
-    end
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
     
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
