@@ -10,8 +10,8 @@ class User < ApplicationRecord
          has_many :puchases
          has_many :items
 
-         validates :nickname, presence: true, length: { maximum: 6 }
-         validates :email, presence: true
+         validates :nickname, presence: true
+         validates :email, confirmation: true
          validates :password, presence: true
          validates :family_name, presence: true
          validates :first_name, presence: true
