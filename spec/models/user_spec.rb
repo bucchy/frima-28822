@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
     end
 
     it "emailには＠を含む必要がある" do
-      @user.email = "0"
+      @user.email = "aaaaa.com"
       @user.valid?
       expect(@user.errors.full_messages).to include("Email is invalid")
     end
