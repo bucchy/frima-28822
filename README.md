@@ -13,11 +13,6 @@ Things you may want to cover:
 * ...
 # テーブル設計
 ## users テーブル
-
-### Association
-- has_many :purchases
-- has_many :items
-## items テーブル
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
 | nickname         | string | null: false |
@@ -31,7 +26,7 @@ Things you may want to cover:
 ### Association
 - has_many :purchases
 - has_many :items
-## item テーブル
+## items テーブル
 | Column        | Type     | Options     |
 | ------------- | -------- | ----------- |
 | name          | string   | null: false |

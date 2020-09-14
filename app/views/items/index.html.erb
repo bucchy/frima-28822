@@ -1,6 +1,8 @@
 <%= render "shared/header" %>
 <div class='main'>
 
+
+
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
@@ -175,6 +177,7 @@
         <% end %>
       </li>
       <%# //商品がある場合は表示されないようにしましょう %>
+
       <%# /商品がない場合のダミー %>
     </ul>
   </div>
@@ -182,7 +185,7 @@
 </div>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="#">
+  <a href= 'items/new', new_item_path>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
 </div>
