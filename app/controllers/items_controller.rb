@@ -29,16 +29,12 @@ class ItemsController < ApplicationController
   
     private
   
+    #３つのコードを１つにしてpriceを追加
     def item_params
-      params.require(:item).permit(:title,:text,:genre_id)
+      params.require(:item).permit(:title, :text, :genre_id, :condition_id, :shippingfee_id, :price)
+      params.require(:item).permit(:content, :image).merge(user_id: current_user.id)
     end
 
-    def item_params
-      params.require(:item).permit(:title,:text,:condition_id)
-    end
-
-    def item_params
-      params.require(:item).permit(:title,:text,:shippingfee_id)
-    end
+    
 
   end

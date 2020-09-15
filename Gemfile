@@ -72,3 +72,6 @@ group :production do
 end
 
 gem "gretel"
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
