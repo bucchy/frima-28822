@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :status_id,            null: false
       t.string  :user_id,              null: false, foreign_key: true
       t.text    :explanation,          null: false
+      t.boolean :checked
       t.timestamps
     end
   end
