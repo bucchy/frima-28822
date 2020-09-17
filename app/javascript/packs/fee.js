@@ -6,8 +6,7 @@ function fee() {
   document.getElementById("add-tax-price").innerHTML = tax
   document.getElementById("profit").innerHTML = inputPrice * 110 / 100
   })
-
-    
+  
 } 
 
 window.addEventListener("load", fee);
