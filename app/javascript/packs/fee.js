@@ -4,7 +4,7 @@ function fee() {
   var inputPrice = document.getElementById("item-price").value;
   var tax = inputPrice*0.1; 
   document.getElementById("add-tax-price").innerHTML = tax
-  document.getElementById("profit").innerHTML = inputPrice * 110 / 100
+  document.getElementById("profit").innerHTML = ( inputPrice - tax )
   })
   
 } 

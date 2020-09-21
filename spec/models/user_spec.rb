@@ -100,4 +100,5 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

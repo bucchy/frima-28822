@@ -53,7 +53,7 @@ Things you may want to cover:
 | street_address  | string  | null: false |
 | phone_number    | string  | null: false |
 | postal_code     | string  | null: false |
-| prefectures     | integer | null: false |
+| prefecture      | integer | null: false |
 | city            | string  | null: false |
 | building_name   | string  |  |
 | purchase_id     | integer | null: false, foreign_key: true |
