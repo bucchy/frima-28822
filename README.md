@@ -13,11 +13,6 @@ Things you may want to cover:
 * ...
 # テーブル設計
 ## users テーブル
-
-### Association
-- has_many :purchases
-- has_many :items
-## items テーブル
 | Column           | Type   | Options     |
 | ---------------- | ------ | ----------- |
 | nickname         | string | null: false |
@@ -31,7 +26,7 @@ Things you may want to cover:
 ### Association
 - has_many :purchases
 - has_many :items
-## item テーブル
+## items テーブル
 | Column        | Type     | Options     |
 | ------------- | -------- | ----------- |
 | name          | string   | null: false |
@@ -58,9 +53,10 @@ Things you may want to cover:
 | street_address  | string  | null: false |
 | phone_number    | string  | null: false |
 | postal_code     | string  | null: false |
-| prefectures     | integer | null: false |
+| prefecture      | integer | null: false |
 | city            | string  | null: false |
 | building_name   | string  |  |
 | purchase_id     | integer | null: false, foreign_key: true |
 ### Association
 - belongs_to :purchase
+
