@@ -1,8 +1,13 @@
 require 'rails_helper'
 
+# before do
+#   @product = build(:product)
+# end
+
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
+    @item = build(:item)
   end
 
   describe 'ユーザー新規登録' do
@@ -62,7 +67,6 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
     end
 
-
      it "family_nameがない場合は登録できないこと" do
      @user.family_name = nil
      @user.valid?
@@ -75,7 +79,6 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Family name 全角（漢字・ひらがな・カタカナ）文字を使用してください")
       end
  
-
      it "family_name_kanaがない場合は登録できないこと" do
       @user.family_name_kana = nil
       @user.valid?
@@ -100,4 +103,5 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
     end
  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end
