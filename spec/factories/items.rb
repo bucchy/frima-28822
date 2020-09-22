@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-   # belongs_to :user
+  
 
     name {"山田"}
     info {"詳細"}
@@ -15,5 +15,3 @@ FactoryBot.define do
   end
 end
 
-# itemのダミーデータにおいて、どのユーザーが出品するのか教えてあげる必要があります。
-# その際、factoryにもアソシエーションを設定することが可能なので、アソシエーションを定義しましょう！
