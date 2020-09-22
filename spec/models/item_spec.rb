@@ -7,11 +7,11 @@ RSpec.describe Item, type: :model do
 
 
   describe '商品出品機能' do
-    # it "imageが空では出品できないこと" do
-    #   @item.image = nil
-    #   @item.valid?
-    #   expect(@item.errors.full_messages).to include("Item-image can't be blank")
-    # end
+    it "imageが空では出品できないこと" do
+      @item.image = nil
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Image can't be blank")
+    end
 
     it "nameが空では出品できないこと" do
       @item.name = nil
@@ -56,10 +56,22 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Scheduled delivery can't be blank")
     end
 
-    it "item_priceが空では出品できないこと" do
+    it "priceが空では出品できないこと" do
       @item.price = nil
       @item.valid?
       expect(@item.errors.full_messages).to include("Price can't be blank")
+    end
+
+    it "priceが300未満では出品できないこと" do
+      @item.price = 299
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price is out of setting range")
+    end
+
+    it "priceが100,000,000以上では出品できないこと" do
+      @item.price = 100000000
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price is out of setting range")
     end
 
   end
