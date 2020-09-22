@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
-def  new
-  @item = Item.new
+  def  new
+    @item = Item.new
+  end
+
 end
