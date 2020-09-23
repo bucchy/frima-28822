@@ -136,9 +136,12 @@
         <%# 購入者の情報がある場合はsold out(if実行)なければend %>
           <%# 商品が売れていればsold outを表示しましょう %>
           <%# <% if product.purchaser_id.present? %>
+          <% if item.id == nil?%>
+          
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+          <% end%>
           <%# //商品が売れていればsold outを表示しましょう %>
         <%# <% end %>
         </div>
