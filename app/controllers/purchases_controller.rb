@@ -6,8 +6,6 @@ class PurchasesController < ApplicationController
   #   @product_purchaser.update( purchaser_id: current_user.id)
   #  end
 
-  def show
-    @item = Item.new
-  end
+
 
 end
