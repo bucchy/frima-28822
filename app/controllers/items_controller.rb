@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit]
-  before_action :set_item, only:[:show, :edit, :update]
+  before_action :set_item, only:[:show, :edit, :destroy, :update]
   before_action :baria_user, only: [:edit, :destroy, :update]
 
   def index
@@ -30,7 +30,8 @@ class ItemsController < ApplicationController
 
  def baria_user
   unless 
-   Item.find(params[:id]).user.id.to_i == current_user.id redirect_to items_path(current_user)
+   Item.find(params[:id]).user.id.to_i == current_user.id 
+   redirect_to items_path(current_user)
   end
  end
 
@@ -43,11 +44,11 @@ class ItemsController < ApplicationController
   end
  end
 
-def destroy
-  @items = Post.find(params[:id])
-  @post.destroy
-  redirect_to posts_path
-end
+ def destroy
+ 
+  @item.destroy
+  redirect_to items_path
+ end
 
   private
 
