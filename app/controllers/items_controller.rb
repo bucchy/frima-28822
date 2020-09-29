@@ -43,6 +43,12 @@ class ItemsController < ApplicationController
   end
  end
 
+def destroy
+  @items = Post.find(params[:id])
+  @post.destroy
+  redirect_to posts_path
+end
+
   private
 
  def item_params
