@@ -6,6 +6,12 @@ class PurchasesController < ApplicationController
   #   @product_purchaser.update( purchaser_id: current_user.id)
   #  end
 
+  def new
+    @purchases = Puchases.new
+  end
 
+  def index
+    @item = Item.find(params[:item_id])
+  end
 
 end
