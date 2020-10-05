@@ -14,4 +14,8 @@ class PurchasesController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def create
+    redirect_to root_path
+  end
+
 end
