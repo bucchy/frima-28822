@@ -1,5 +1,4 @@
 class PurchasesController < ApplicationController
-
   # 購入ボタンを押したら購入者のIDが商品に登録される様に実装
   # def  done
   #   @product_purchaser= Product.find(params[:id])
@@ -13,9 +12,4 @@ class PurchasesController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
   end
-
-  def create
-    redirect_to root_path
-  end
-
 end

@@ -1,5 +1,4 @@
 class Purchase < ApplicationRecord
-  
   belongs_to :item
   belongs_to :user
   has_one :address
@@ -7,5 +6,4 @@ class Purchase < ApplicationRecord
   # def new
   #   @purchase = Purchase.new
   # end
-
 end
