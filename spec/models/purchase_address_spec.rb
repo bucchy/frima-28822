@@ -1,0 +1,40 @@
+require 'rails_helper'
+
+RSpec.describe PurchaseAddress, type: :model do
+  before do
+    @purchase_address = FactoryBot.build(:purchase_address)
+  end
+
+  describe '商品出品機能' do
+    it '郵便番号が空では出品できないこと' do
+      @purchase_address.postal_code = nil
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+    end
+    
+    it '都道府県が空では出品できないこと' do
+      @purchase_address.prefecture_id = nil
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include("Prefecture can't be blank")
+    end
+    
+    it '市区町村が空では出品できないこと' do
+      @purchase_address.city = nil
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include()
+    end
+
+    it '番地が空では出品できないこと' do
+      @purchase_address.street_address = nil
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include()
+    end
+
+    it '電話番号が空では出品できないこと' do
+      @purchase_address.phone_number = nil
+      @purchase_address.valid?
+      expect(@purchase_address.errors.full_messages).to include()
+    end
+  end
+
+end
