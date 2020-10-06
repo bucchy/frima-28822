@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index, :create]
+  
   def index
     @purchases = PurchaseAddress.new
-    @item = Item.find(params[:item_id]) # .user.id.to_i == current_user.id
   end
 
   def new
@@ -10,7 +11,7 @@ class OrdersController < ApplicationController
 
   def create
     @purchases = PurchaseAddress.new(order_params)
-    @item = Item.find(params[:item_id])
+   
 
     if @purchases.valid?
       pay_item
@@ -35,4 +36,9 @@ class OrdersController < ApplicationController
       currency: 'jpy'
     )
   end
+
+  def set_item
+    @item = Item.find(params[:item_id]) 
+  end
+
 end
