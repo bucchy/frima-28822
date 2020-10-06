@@ -24,12 +24,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
- def baria_user
-  unless 
-   Item.find(params[:id]).user.id.to_i == current_user.id
-   redirect_to items_path(current_user)
   end
 
+  def baria_user
+   unless 
+   Item.find(params[:id]).user.id.to_i == current_user.id
+   redirect_to items_path(current_user)
+   end
+  end
+  
   def baria_user
     redirect_to items_path(current_user) unless Item.find(params[:id]).user.id.to_i == current_user.id
   end
