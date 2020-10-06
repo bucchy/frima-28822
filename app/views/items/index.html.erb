@@ -136,7 +136,7 @@
 
           <%# 商品が売れていればsold outを表示しましょう %>
           <%# 購入機能の実装後までコメントアウト %>
-        <% if item.purchase == nil? %>
+        <% if item.purchase != nil %>
           <div class='sold-out'>
           <span> Sold Out!! </span>
           </div>

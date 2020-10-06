@@ -8,8 +8,8 @@ class User < ApplicationRecord
          :rememberable, 
          :validatable
 
-  has_many :puchase
-  has_many :item
+  has_many :puchases
+  has_many :items
 
   validates :nickname, presence: true
   validates :email, confirmation: true
