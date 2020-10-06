@@ -24,6 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+ def baria_user
+  unless 
+   Item.find(params[:id]).user.id.to_i == current_user.id
+   redirect_to items_path(current_user)
   end
 
   def baria_user
@@ -38,6 +42,13 @@ class ItemsController < ApplicationController
     end
   end
 
+ def destroy 
+  if @item.destroy
+     redirect_to items_path
+  else
+    render :show
+  end
+ end
   private
 
   def item_params
