@@ -14,5 +14,3 @@ class PurchaseAddress
     Address.create(street_address: street_address, phone_number: phone_number, postal_code: postal_code, prefecture_id: prefecture_id, city: city, building_name: building_name, created_at: created_at, updated_at: updated_at, purchase_id: purchase.id)
   end
 end
-# Puchase.createで変数の代入を行う
-# Address.createのpurchase_idに持ってくる 手順⑥
