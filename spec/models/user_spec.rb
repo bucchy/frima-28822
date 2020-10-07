@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# before do
-#   @product = build(:product)
-# end
-
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)

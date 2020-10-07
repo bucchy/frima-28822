@@ -7,10 +7,6 @@ class OrdersController < ApplicationController
     redirect_to root_url if @item.user_id == current_user.id
   end
 
-  def new
-    @purchases = Purchase.new
-  end
-
   def create
     @purchases = PurchaseAddress.new(order_params)
 
