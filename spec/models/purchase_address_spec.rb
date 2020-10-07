@@ -39,31 +39,31 @@ RSpec.describe PurchaseAddress, type: :model do
     it '市区町村が空では出品できないこと' do
       @purchase_address.city = nil
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include
+      expect(@purchase_address.errors.full_messages).to include("City can't be blank")
     end
 
     it '番地が空では出品できないこと' do
       @purchase_address.street_address = nil
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include
+      expect(@purchase_address.errors.full_messages).to include("Street address can't be blank")
     end
 
     it '電話番号が空では出品できないこと' do
       @purchase_address.phone_number = nil
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include
+      expect(@purchase_address.errors.full_messages).to include("Phone number can't be blank")
     end
 
     it '電話番号に-が含まれていると購入できないこと' do
       @purchase_address.phone_number = "090-1234-5678"
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include
+      expect(@purchase_address.errors.full_messages).to include("Phone number is invalid. Ixclude hyphen(-)")
     end
 
     it '電話番号が12桁以上だと購入できないこと' do
       @purchase_address.phone_number = "090123456789"
       @purchase_address.valid?
-      expect(@purchase_address.errors.full_messages).to include
+      expect(@purchase_address.errors.full_messages).to include("Phone number is invalid. within 11 digits")
     end
   end
 end
