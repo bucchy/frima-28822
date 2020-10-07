@@ -9,7 +9,7 @@ class PurchaseAddress
     validates :street_address, presence: true
     validates :phone_number, presence: true
     validates :phone_number, format: { with: /\A\d{11}\z/, message: 'is invalid. Ixclude hyphen(-)' }
-    validates :phone_number, length: { maximum: 11, message: "is invalid. within 11 digits"}
+    validates :phone_number, length: { maximum: 11, message: 'is invalid. within 11 digits' }
   end
 
   def save
@@ -17,5 +17,3 @@ class PurchaseAddress
     Address.create(street_address: street_address, phone_number: phone_number, postal_code: postal_code, prefecture_id: prefecture_id, city: city, building_name: building_name, purchase_id: purchase.id)
   end
 end
-
-
