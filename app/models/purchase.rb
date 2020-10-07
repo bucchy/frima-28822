@@ -1,9 +1,5 @@
 class Purchase < ApplicationRecord
-
-  def new
-    @purchase = Purchase.new
-  end
-
-
-
+  belongs_to :item
+  belongs_to :user
+  has_one :address
 end
