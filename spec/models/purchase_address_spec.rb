@@ -6,6 +6,11 @@ RSpec.describe PurchaseAddress, type: :model do
   end
 
   describe '商品出品機能' do
+
+    it '正常に入力すれば登録できること' do
+     expect(@purchase_address).to be_valid
+    end
+
     it '郵便番号が空では出品できないこと' do
       @purchase_address.postal_code = nil
       @purchase_address.valid?

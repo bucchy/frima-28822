@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     @purchases = PurchaseAddress.new
-    redirect_to root_url if @item.purchase != nil
+    redirect_to root_url unless @item.purchase.nil?
     redirect_to root_url if @item.user_id == current_user.id
   end
 
@@ -37,6 +37,4 @@ class OrdersController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
-
-  
 end
