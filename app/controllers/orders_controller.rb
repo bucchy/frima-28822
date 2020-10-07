@@ -1,8 +1,10 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
-  
+
   def index
     @purchases = PurchaseAddress.new
+    redirect_to root_url if @item.purchase != nil
+    redirect_to root_url if @item.user_id == current_user.id
   end
 
   def new
@@ -11,7 +13,6 @@ class OrdersController < ApplicationController
 
   def create
     @purchases = PurchaseAddress.new(order_params)
-   
 
     if @purchases.valid?
       pay_item
@@ -38,7 +39,8 @@ class OrdersController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:item_id]) 
+    @item = Item.find(params[:item_id])
   end
 
+  
 end
