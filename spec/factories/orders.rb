@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :scheduled_delivery do
+  factory :order do
     
   end
 end

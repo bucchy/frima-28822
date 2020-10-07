@@ -5,7 +5,7 @@ class Condition < ActiveHash::Base
     { id: 3, name: '未使用に近い' },
     { id: 4, name: 'やや傷や汚れあり' },
     { id: 5, name: '傷や汚れあり' },
-    { id: 6, name: '全体的に状態が悪い' }
-
+    { id: 6, name: '全体的に状態が悪い' },
+  
   ]
   end
