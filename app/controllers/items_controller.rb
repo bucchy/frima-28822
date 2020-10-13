@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit]
   before_action :set_item, only: [:show, :edit, :destroy, :update]
-  before_action :baria_user, only: [:edit, :destroy, :update]
+  before_action :baria_user, only: [:show, :edit, :destroy, :update]
 
   def index
     @items = Item.includes(:user).order('created_at DESC')
@@ -24,11 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-  end
-  
-
-  def baria_user
-    redirect_to items_path(current_user) unless Item.find(params[:id]).user.id.to_i == current_user.id
+    redirect_to items_path(current_user) unless Item.find(params[:id]).user.id.to_i != current_user.id
   end
 
   def baria_user
